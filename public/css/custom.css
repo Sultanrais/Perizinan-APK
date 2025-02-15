@@ -1,0 +1,231 @@
+/* Variabel Warna */
+:root {
+    --primary: #5e72e4;
+    --secondary: #8392ab;
+    --success: #2dce89;
+    --info: #11cdef;
+    --warning: #fb6340;
+    --danger: #f5365c;
+    --light: #e9ecef;
+    --dark: #344767;
+    --white: #ffffff;
+    --gray: #8898aa;
+}
+
+/* Animasi Global */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Komponen UI */
+.card {
+    border: none;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .3);
+}
+
+.btn {
+    text-transform: none;
+    letter-spacing: 0.025em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    transition: all 0.15s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-success {
+    background-color: var(--success);
+    border-color: var(--success);
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    border-color: var(--warning);
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
+}
+
+.badge {
+    padding: 0.5em 0.75em;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: transparent;
+    padding: 0.5rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--gray);
+}
+
+.breadcrumb-item.active {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+/* Form Elements */
+.form-control {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    transition: all 0.15s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(94, 114, 228, 0.25);
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .table-responsive {
+        margin-bottom: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .btn-group .btn {
+        border-radius: 0.375rem !important;
+        margin: 0.25rem 0;
+    }
+    
+    .profile-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-stats > div {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tooltips & Popovers */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.popover {
+    border: 0;
+    box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Notifikasi & Alert */
+.alert {
+    border: 0;
+    padding: 1rem 1.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+}
+
+.toast {
+    background-color: var(--white);
+    border: 0;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+/* Tabel */
+.table thead th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    padding: 0.75rem;
+    background-color: #f6f9fc;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.table td {
+    font-size: 0.8125rem;
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    height: 100%;
+    width: 2px;
+    background: var(--light);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 1.5rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0.65rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--light);
+}
